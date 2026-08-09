@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 import os
+from typing import Tuple
 
 
 @dataclass(frozen=True)
@@ -38,7 +39,7 @@ class AppConfig:
     gps_label: str = "13.0103° N, 77.6535° E"
     mode: str = "ADMIN MODE"
     camera_url: str = field(default_factory=lambda: os.getenv("SGS_CAMERA_URL", "http://192.168.0.100:4747/video"))
-    developers: tuple[str, ...] = ("M. Yogesh Naidu", "Krishna Dev")
+    developers: Tuple[str, ...] = ("M. Yogesh Naidu", "Krishna Dev")
     company: str = "NY Technologies"
     pins: SensorPins = field(default_factory=SensorPins)
     api: ApiConfig = field(default_factory=ApiConfig)
