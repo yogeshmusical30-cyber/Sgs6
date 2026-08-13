@@ -1,0 +1,1 @@
+"""Smart Guardian System package."""
